@@ -1,0 +1,43 @@
+@import "__variables";
+
+:root{
+    font-family: $fuentePrincipal;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+ul,li{
+   list-style-type: none;
+   padding-left: 0; 
+}
+
+a{
+    text-decoration: none;
+}
+
+input,textarea{
+    font-family: $fuentePrincipal;
+    font-size: inherit;
+    border: 1px solid $colorSecundario;
+    outline-style: none;
+    &:focus{
+        outline-style: none;
+    }
+
+}
+input{
+    min-height: 1.8em;
+    
+}
+
+textarea{
+    resize: vertical;
+}

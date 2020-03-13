@@ -1,0 +1,111 @@
+@import "__reset";
+
+body{
+    background-image: linear-gradient(to left,rgb(73, 70, 70),rgb(252, 248, 248));
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 30em;
+    min-height: 100vh;    
+    margin-left: auto;
+    margin-right: auto;
+    h1{
+        color: $colorPrincipal;
+        font-weight: 500;
+        font-size: 1.4em;
+    }
+}
+
+#form_contact{
+    width: 100%;
+    padding: 1.5em;
+    border-top: .3em solid $colorPrincipal;
+    border-radius: .3em .3em 0 0;
+    box-shadow: .5em .5em .9em .2em rgb(27, 27, 27);
+    background-image: url(../images/contacto.png);
+    background-size: cover;
+    input[type=text],
+    input[type=email],
+    textarea{
+        display: block;
+        width: 100%;
+        padding: .5em;
+        margin-bottom: 1.5em;      
+        border-radius: .5em;
+        &:focus{
+            border-color: $colorPrincipal;
+            border-width: .1em;
+        }
+        &:required{
+            background-color: rgba($successColor,.1);
+        }
+        &:invalid{
+            background-color: rgba($errorColor,.1);
+        }
+        &::placeholder{
+            color: $colorPrincipal;
+        }
+    }
+    textarea{
+        min-height: 6em;
+    }
+}
+
+
+.btn{
+    display: block;
+    margin-left: auto;
+    border-style: none;
+    text-transform: uppercase;
+    &.btn--primary{
+        background-color:$btPrincipalColor;
+        color: white;
+    }
+    
+}
+
+.message{
+    padding: .5em;
+    margin-bottom: 1em;
+    border: 1px solid;
+    border-radius: .5em;
+    color: white;
+    &.error{
+        background-color: rgba($errorColor,.5);
+        border-color: $errorColor;
+    }
+    &.success{
+        background-color: rgba($successColor,.5);
+        border-color: $successColor;
+    }
+   
+}
+
+@media (min-width:35em){
+    body{
+        #form_contact{
+            position: relative;
+        }
+        &::before{
+            content: "";
+            top:1.5em;
+            left: .5em;
+            position: absolute;
+            display: block;
+            width: 3em;
+            height: 3em;
+            border: 50% solid rgba(235, 235, 22, .5);
+            border-radius: 50%;
+            background-image: linear-gradient(to left,rgb(230, 230, 187),rgba(235, 235, 22, .2));
+            box-shadow: 0 0 8em 4em rgba(161, 161, 95, 0.5);
+        }
+
+        .container{
+            margin-top: 3em;
+        }
+    }
+}
+
+ 
